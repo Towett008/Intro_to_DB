@@ -1,7 +1,5 @@
--- Use the alx_book_store database
 USE alx_book_store;
 
---Show full description of the Books table without using DESCRIBE or EXPLAIN
 SELECT
     COLUMN_NAME,
     COLUMN_TYPE,
