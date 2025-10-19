@@ -1,28 +1,28 @@
-CREATE DATABASE IF NOT EXIST alx_book_store;
+CREATE DATABASE IF NOT EXISTS alx_book_store;
 
 -- Use the database
-USE alx_book_store
+USE alx_book_store;
 
 --Create the Authors table
-CREATE TABLE AUTHORS (
+CREATE TABLE authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
-    author_mname VARCHAR(215) NOT NULL
+    author_name VARCHAR(215) NOT NULL
 
 );
 
---Create the Bokks table
-CREATE TABLE BOOKS (
+--Create the Books table
+CREATE TABLE books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(130) NOT NULL,
     author_id INT,
-    price DOUBLE,
+    price DECIMAL(10,2),
     publication_date DATE,
     FOREIGN KEY (author_id) REFERENCES AUTHORS(author_id)
     
 );
 
 --Create the Customers table
-CREATE TABLE CUSTOMERS (
+CREATE TABLE customers(
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(215) NOT NULL,
     email VARCHAR(215),
@@ -31,7 +31,7 @@ CREATE TABLE CUSTOMERS (
 );
 
 --Create the Orders table
-CREATE TABLE ORDERS(
+CREATE TABLE orders(
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATE,
@@ -40,8 +40,8 @@ CREATE TABLE ORDERS(
 );
 
 --Create the order_Details table
-CREATE TABLE ORDER_DETAILS (
-    orderdetailed INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE order_details (
+    order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,
     quantity DOUBLE,
